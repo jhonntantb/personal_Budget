@@ -1,6 +1,6 @@
 const { DataTypes, UUIDV4 }=require("sequelize")
 
-module.export=(sequelize)=>{
+module.exports=(sequelize)=>{
     sequelize.define("operation",{
         id:{
             type:DataTypes.UUID,
