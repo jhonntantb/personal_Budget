@@ -1,10 +1,10 @@
 const { Router } = require('express');
-const router = Router();
 // Importar todos los routers;
-const category=require('./category')
+const categories=require('./categories')
 
+const router = Router();
 
 // Configurar los routers
-router.use('/countries',category);
+router.use('/countries',categories);
 
 module.exports = router;

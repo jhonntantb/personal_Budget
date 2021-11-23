@@ -1,25 +1,28 @@
-const { DataTypes, UUIDV4 }=require("sequelize")
-
-module.exports=(sequelize)=>{
-    sequelize.define("operation",{
-        id:{
-            type:DataTypes.UUID,
-            defaultValue: UUIDV4,
-            primaryKey: true
-
-        },
-        concept:{
-            type: DataTypes.TEXT
-        },
-        mont:{
-            type:DataTypes.NUMBER
-        },
-        date:{
-            type: DataTypes.TIME
-        },
-        type:{
-            type:DataTypes.ENUM("entry","egress")
-        }
-        
-    })
-}
+const { DataTypes } = require('sequelize');
+// Exportamos una funcion que define el modelo
+// Luego le injectamos la conexion a sequelize.
+module.exports = (sequelize) => {
+  // defino el modelo
+  sequelize.define('operation', {
+    id:{
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true,
+    },
+    concept: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    amounth: {
+      type: DataTypes.INTEGER,
+    },
+    date:{
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    type:{
+        type: DataTypes.ENUM("entry","egress"),
+        allowNull: false
+    }
+  });
+};
