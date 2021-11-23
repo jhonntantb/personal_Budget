@@ -33,6 +33,11 @@ sequelize.models = Object.fromEntries(capsEntries);
 const { Category, Operation, User } = sequelize.models;
 
 // Aca vendrian las relaciones
+User.hasMany(Operation)
+Operation.belongsTo(User)
+
+Category.belongsToMany(Operation,{through:"operation_catergory"})
+Operation.belongsToMany(Category,{through:"operation_catergory"})
 
 
 module.exports = {
