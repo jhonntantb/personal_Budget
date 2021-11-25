@@ -12,13 +12,13 @@ function NavBar() {
     return (
         <div className="navBar">
             <nav className="nav">
-                <h1>Personal Budget</h1>
+                <Link to="./home" ><h1>Personal Budget</h1></Link>
                 <div className="list">
-                    <h3>Register Operation</h3>
-                    <h3>List of Operations</h3>
+                    <Link to="/register" ><h3>Register Operation</h3></Link>
+                    <Link to="/list" ><h3>List of Operations</h3></Link>
                     {isAuthenticated?
-                    <div><Logout/>
-                    <Profile/></div>:<LoginButton/>}
+                    <div className="authenticated">
+                    <Profile/><Logout/></div>:<LoginButton/>}
                     
                 </div>
             </nav>

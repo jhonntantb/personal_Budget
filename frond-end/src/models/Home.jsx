@@ -2,10 +2,9 @@ import React from 'react'
 
 function Home() {
     return (
-        <div className="App">
-            <header className="App-header">
+        <div >
                 <p>Personal Budget</p>
-            </header>
+            
         </div>
     )
 }

@@ -1,0 +1,72 @@
+.form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+}
+.formInput{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    box-shadow: 4px 4px 4px 4px rgba(2,2,2,0.2)
+}
+.form p {
+    color: black;
+    font-size: 30px;
+    padding: 10px;
+}
+.concept{
+    display: flex;
+    flex-direction: column;
+}
+.concept label{
+    padding: 5px;
+}
+.concept textarea{
+    width: 500px;
+    height: 50px;
+    padding: 20px;
+}
+.numberDate{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.amounth{
+    padding-top: 25px;
+}
+.amounth label{
+    padding: 10px;
+}
+.amounth input{
+    width: 75px;
+    padding: 5px;
+}
+.date{
+    padding-top: 25px;
+}
+.date label{
+    padding: 10px;
+}
+.checkBox{
+    display: flex;
+    flex-direction: column;
+}
+.checkBox div{
+    padding-left: 10px;
+}
+.entry{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+}
+.egress{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+}

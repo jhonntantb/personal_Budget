@@ -1,5 +1,4 @@
 const { Router } = require('express');
-const { where } = require('sequelize/types');
 const { Operation }=require('../db')
 const router = Router();
 router.get("/",async(_req,res,next)=>{
