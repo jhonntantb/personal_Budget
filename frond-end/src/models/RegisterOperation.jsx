@@ -36,8 +36,8 @@ function RegisterOperation() {
                     </div>
                    <Category/>
                 </div>
-
             </form>
+            <button>Save Operation</button>
             </div>
         </div>
     )
