@@ -1,9 +1,9 @@
 const { Router } = require('express');
-const { Operation }=require('../db')
+const { Operation, Category }=require('../db')
 const router = Router();
 router.get("/",async(_req,res,next)=>{
     try {
-        const operations=await Operation.findAll()
+        const operations=await Operation.findAll({include:{model:Category}})
         res.send(operations)
     } catch (error) {
         next(error)

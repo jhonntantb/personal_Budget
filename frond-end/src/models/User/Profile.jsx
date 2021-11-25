@@ -17,7 +17,6 @@ function Profile() {
                 <img src={user.picture} alt={user.name} />
                 <div>
                 <h2>{user.name}</h2>
-                <p>{user.email}</p>
                 </div>
             </div>}
         </div>
