@@ -9,6 +9,9 @@ export const getUser=async(email)=>{
     const res=await axios.get(`${url}/user`,{data:email})
     return res.data
 }
+export const putUser=async(data)=>{
+    await axios.put(`${url}/user`,data)
+}
 export const saveUser=async(user)=>{
     const sen=await axios.post(`${url}/user`,user)
 }

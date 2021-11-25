@@ -29,6 +29,7 @@ router.post("/",async(req,res,next)=>{
 router.put("/",async(req,res,next)=>{
     try {
         const useUpdate=await User.update({balance:req.body.balance},{where:{id:req.body.id}})
+        res.status(200).json(useUpdate)
     } catch (error) {
         next(error)
     }

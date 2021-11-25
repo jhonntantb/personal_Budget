@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getUser, saveOperation } from '../api'
+import { getUser, putUser, saveOperation } from '../api'
 import Category from './Category'
 import { useAuth0 } from "@auth0/auth0-react"
 import "./RegisterOperation.css"
@@ -12,8 +12,8 @@ function RegisterOperation() {
     const [concept, setConcept] = useState("")
     const [amounth, setAmounth] = useState(0)
     const [date, setDate] = useState("")
-    const [type, setType] = useState("initialState")
-    const [categorySelect, setCategorySelect] = useState("initialState")
+    const [type, setType] = useState("")
+    const [categorySelect, setCategorySelect] = useState("")
 
 
    const handleInput=(e)=>{
@@ -27,9 +27,11 @@ function RegisterOperation() {
            setType(e.target.value)
        }
    }
+   const balance=type==="entry"?userCall[0]?.balance + + amounth:userCall[0]?.balance-amounth;
    const handleNewOperation=async(e)=>{
        e.preventDefault()
-       await saveOperation({operation:{concept:concept,amounth:amounth,date:date,type:type,userId:userCall[0].id,categoryId:categorySelect }})
+       await saveOperation({operation:{concept:concept,amounth:amounth,date:date,type:type,userId:userCall[0].id,categoryId:categorySelect?categorySelect:null }})
+       await putUser({balance:balance,id:userCall[0].id})
        setConcept("")
        setDate("")
        setAmounth(0)
