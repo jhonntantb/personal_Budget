@@ -1,0 +1,39 @@
+.categorieslist{
+    display: flex;
+    flex-direction: column;
+    
+}
+.categoryLabel{
+    padding: 5px;
+}
+.newCategoryBtn{
+    padding: 5px;
+    background-color: rgb(32, 32, 32);
+    color: blanchedalmond;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.newCategoryBtn:hover {
+    background-color:blanchedalmond;
+    color: rgb(32, 32, 32);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.createCategorybtn{
+    padding: 5px;
+    background-color: black;
+    color: blanchedalmond;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.createCategorybtn:hover{
+    background-color:blanchedalmond;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn {
+    padding: 10px;
+    display: flex;
+    justify-content:flex-end;
+}

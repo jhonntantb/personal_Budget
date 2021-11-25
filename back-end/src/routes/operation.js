@@ -10,7 +10,8 @@ router.get("/",async(_req,res,next)=>{
     }
 });
 router.post("/",async(req,res,next)=>{
-    const operation=req.body
+    const operation=req.body.operation;
+    const category=req.body.category;
     try {
         const newOperation=await Operation.create(operation)
         res.send(newOperation)

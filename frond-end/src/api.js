@@ -2,24 +2,24 @@ import axios from "axios"
 const url="http://localhost:3001"
 
 export const getOperations=async()=>{
-    const res=await axios.get(url)
+    const res=await axios.get(`${url}/operation`)
     return res.data
 }
 export const getUser=async(email)=>{
-    const res=await axios.get(url,{data:email})
+    const res=await axios.get(`${url}/user`,{data:email})
+    return res.data
 }
 export const saveUser=async(user)=>{
-    const sen=await axios.post(url,user)
+    const sen=await axios.post(`${url}/user`,user)
 }
-export const saveOperatrion=async(opetarion)=>{
-    const sen=await axios.post(url,opetarion)
+export const saveOperation=async(data)=>{
+    const sen=await axios.post(`${url}/operation`,data)
 }
 export const deleteOperration=async(id)=>{
-    await axios.delete(`${url}/${id}`)
+    await axios.delete(`${url}/operation/${id}`)
 }
 export const getCategories=async()=>{
     const res=await axios.get(`${url}/categories`)
-    console.log(res.data)
     return res.data
 }
 export const newCategory=async(category)=>{

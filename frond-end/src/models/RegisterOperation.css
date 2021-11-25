@@ -70,3 +70,10 @@
     justify-content: flex-end;
     flex-direction: row-reverse;
 }
+.saveBtn{
+    border-radius: 5px;
+    background-color: mediumpurple;
+    color: black;
+    font-size: 17px;
+    cursor: pointer;
+}
