@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color:navajowhite;
+    background-color:rgb(142, 142, 235);
 }
 .list{
     display: flex;
@@ -14,13 +14,29 @@
 .nav h1{
     font-family: "Trebuchet MS", Verdana, sans-serif;
     font-size: 30px;
-    color: rgb(22, 34, 2);
+    color:black;
     padding-left: 50px;
 }
 .list h3{
     padding: 10px;
+    color: rgb(8, 8, 61);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
 }
 .authenticated {
     display: flex;
     flex-direction: row;
+    padding-top: 10px;
+}
+.istrue{
+    display: flex;
+    flex-direction: row;
+}
+.logoutC{
+    margin-top: 12px;
+    padding-left: 10px;
+}
+.isFalse{
+    margin-top: 25px;
+    padding-left: 20px;
 }

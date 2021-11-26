@@ -14,8 +14,13 @@
     flex-direction: column;
 }
 .filterType button{
+    width: 100px;
+    height: 30px;
     padding: 5px;
     margin: 5px;
+    background-color: black;
+    color: #ee8586;
+    border-radius: 10px;
 }
 .tableList{
     width: 70%;
@@ -23,4 +28,28 @@
     flex-direction: column;
     justify-content: center;
     
+}
+.categories{
+    display: flex;
+    flex-direction: column;
+}
+.cbtn button{
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+    margin: 5px;
+    background-color: black;
+    color: #ee8586;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.deletebtn button{
+    width: 80px;
+    height: 30px;
+    padding: 5px;
+    margin: 5px;
+    background-color: rgb(142, 142, 235);
+    color:black;
+    border-radius: 10px;
+    font-size: 12px;
 }

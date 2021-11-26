@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from 'react'
 import { useAuth0 } from "@auth0/auth0-react"
 import { getUser } from '../api'
+import "./Home.css"
 function Home() {
     
     const {user, isAuthenticated}=useAuth0()
@@ -12,11 +13,11 @@ function Home() {
             setUserCall(await getUser(email))}
     }, [isAuthenticated])
     return (
-        <div >
-            {isAuthenticated?<div>
-            <div>
-                <h3>Balance of operatios</h3>
-                <h3>{userCall?.balance}</h3>
+        <div className="home" >
+            {isAuthenticated?<div className="info">
+            <div className="balance">
+                <h3>Balance of operations</h3>
+                <h3 className="number" >${userCall?.balance}</h3>
             </div>
             <div>
                 <h3>List of the last ten operations </h3>
@@ -44,7 +45,7 @@ function Home() {
                     </tbody>
                 </table>
             </div>
-            </div>:<h3><span > Click Login to start using</span></h3> }
+            </div>:<h3> Click <span style={{backgroundColor:"#ee8586", padding:"6px", borderRadius:"10px"}}>Login</span> to start using</h3> }
             
         </div>
     )

@@ -48,11 +48,11 @@ function RegisterOperation() {
    }, [reset])
     return isAuthenticated? (
         <div className="form">
-            <p>Operation Form</p>
+            <h2>Operation Form</h2>
             <div>
             <form className="formInput" >
                 <div className="concept">
-                    <label htmlFor="concept"> <span>Concept</span></label>
+                    <label htmlFor="concept"> <h4>Concept</h4></label>
                     <textarea type="text" id="concept" placeholder="concept of operation" value={concept} onChange={(e)=>handleInput(e)} />
                 </div>
                 <div className="numberDate">

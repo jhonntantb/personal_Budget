@@ -12,13 +12,19 @@ function NavBar() {
     return (
         <div className="navBar">
             <nav className="nav">
-                <Link to="./home" ><h1>Personal Budget</h1></Link>
+                <Link to="./home" style={{textDecoration:"none"}}  ><h1>Personal Budget</h1></Link>
                 <div className="list">
-                    <Link to="/register" ><h3>Register Operation</h3></Link>
-                    <Link to="/list" ><h3>List of Operations</h3></Link>
+                    <Link to="/register" style={{textDecoration:"none"}} ><h3>Register Operation</h3></Link>
+                    <Link to="/list" style={{textDecoration:"none"}}  ><h3>List of Operations</h3></Link>
                     {isAuthenticated?
                     <div className="authenticated">
-                    <Profile/><Logout/></div>:<LoginButton/>}
+                        <div className="istrue">
+                        <Profile/>
+                        <div className="logoutC">
+                        <Logout/>
+                        </div>
+                        </div>
+                    </div>:<div className="isFalse"> <LoginButton/></div>}
                     
                 </div>
             </nav>

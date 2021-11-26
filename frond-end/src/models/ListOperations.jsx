@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useAuth0 } from "@auth0/auth0-react"
 import { deleteOperation, getCategories, getOperations, getUser, putUser} from "../api"
 import NotFound from "./NotFound/NotFound.jsx" 
+import BtnCategory from './BtnCategory'
 import "./ListOperations.css"
 
 function ListOperations() {
@@ -53,11 +54,13 @@ function ListOperations() {
                     <button value="entry" onClick={e=>handleType(e)}>Entry</button>
                     <button value="egress" onClick={e=>handleType(e)}>Egress</button>
                 </div>
-                <div>
+                <div className="categories" >
                     <h3>Categories</h3>
                     {
                         categories.map(c=>
-                            <button value={c.name} onClick={e=>handleCategoryList(e)}>{c.name}</button>
+                            <div className="cbtn">
+                            <button  value={c.name} onClick={e=>handleCategoryList(e)}>{c.name}</button>
+                            </div>
                             )
                     }
     
@@ -84,7 +87,7 @@ function ListOperations() {
                             <td>{o.date}</td>
                             <td>{o.type}</td>
                             <td>{o.category?.name}</td>
-                            <td><button id={o.id}  onClick={e=>handleDeleteOperation(e)} >Delete</button></td>
+                            <td><div className="deletebtn"><button id={o.id}  onClick={e=>handleDeleteOperation(e)} >Delete</button> </div></td>
                         </tr>
                         )
                         }

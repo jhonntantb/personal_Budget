@@ -72,8 +72,12 @@
 }
 .saveBtn{
     border-radius: 5px;
-    background-color: mediumpurple;
+    background-color: rgb(142, 142, 235);
     color: black;
     font-size: 17px;
     cursor: pointer;
+}
+.saveBtn:hover{
+    background-color: black;
+    color:rgb(142, 142, 235) ;
 }

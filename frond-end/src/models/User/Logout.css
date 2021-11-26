@@ -1,0 +1,17 @@
+.logout{
+
+    height: 30px;
+    width: 70px;
+    border-radius: 10px;
+    background-color: #ee8586;
+    color: black;
+    cursor: pointer;
+}
+.login{
+    height: 30px;
+    width: 70px;
+    border-radius: 10px;
+    background-color: #ee8586;
+    color: black;
+    cursor: pointer;
+}
