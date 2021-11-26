@@ -1,14 +1,29 @@
 import React, { useState, useEffect } from 'react'
-import { getCategories, getOperations} from "../api"
+import { useAuth0 } from "@auth0/auth0-react"
+import { deleteOperation, getCategories, getOperations, getUser, putUser} from "../api"
+import NotFound from "./NotFound/NotFound.jsx" 
 import "./ListOperations.css"
 
 function ListOperations() {
+    const {user, isAuthenticated}=useAuth0()
     const [operations, setOperations] = useState([])
     const [categories,setCategories]=useState([])
+    const [userCall,setUserCall]=useState({})
+    const [action,setAction]=useState(false)
+
+    const email=user?.email
+    
     useEffect(async() => {
         await setOperations(await getOperations())
         await setCategories(await getCategories())
     }, [])
+    useEffect(async() => {
+        if(isAuthenticated){
+            setUserCall(await getUser(email))}
+    }, [isAuthenticated])
+    useEffect(async() => {
+        await setOperations(await getOperations())
+    }, [action])
 
     const handleType=async(e)=>{
         e.preventDefault()
@@ -22,8 +37,15 @@ function ListOperations() {
         const filterCategory=allOpetarions.filter(o=>o.category?.name===e.target.value)
         setOperations(filterCategory)
     }
-    console.log(categories)
-    return (
+    const handleDeleteOperation=async(e)=>{
+        e.preventDefault();
+        const operation=operations.find(o=>o.id===e.target.id)
+        const balance=operation.type==="entry"?userCall.balance - operation.amounth:userCall.balance+ +operation.amounth;
+        await deleteOperation(e.target.id)
+        await putUser({balance:balance,id:userCall.id})
+        setAction(!action)
+    }
+    return isAuthenticated?(
         <div className="listOperations">
             <div className="filters">
                 <div className="filterType">
@@ -62,7 +84,7 @@ function ListOperations() {
                             <td>{o.date}</td>
                             <td>{o.type}</td>
                             <td>{o.category?.name}</td>
-                            <td><button>Delete</button></td>
+                            <td><button id={o.id}  onClick={e=>handleDeleteOperation(e)} >Delete</button></td>
                         </tr>
                         )
                         }
@@ -71,6 +93,8 @@ function ListOperations() {
                 </table>
             </div>
         </div>
+    ):(
+        <NotFound/>
     )
 }
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getUser, putUser, saveOperation } from '../api'
 import Category from './Category'
 import { useAuth0 } from "@auth0/auth0-react"
+import NotFound from "./NotFound/NotFound.jsx"
 import "./RegisterOperation.css"
 
 function RegisterOperation() {
@@ -45,7 +46,7 @@ function RegisterOperation() {
    }, [isAuthenticated])
    useEffect(() => {
    }, [reset])
-    return (
+    return isAuthenticated? (
         <div className="form">
             <p>Operation Form</p>
             <div>
@@ -81,7 +82,7 @@ function RegisterOperation() {
             
             </div>
         </div>
-    )
+    ):(<NotFound/>)
 }
 
 export default RegisterOperation

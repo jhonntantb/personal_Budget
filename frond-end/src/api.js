@@ -6,7 +6,7 @@ export const getOperations=async()=>{
     return res.data
 }
 export const getUser=async(email)=>{
-    const res=await axios.get(`${url}/user`,{data:email})
+    const res=await axios.get(`${url}/user/${email}`)
     return res.data
 }
 export const putUser=async(data)=>{
@@ -18,7 +18,7 @@ export const saveUser=async(user)=>{
 export const saveOperation=async(data)=>{
     const sen=await axios.post(`${url}/operation`,data)
 }
-export const deleteOperration=async(id)=>{
+export const deleteOperation=async(id)=>{
     await axios.delete(`${url}/operation/${id}`)
 }
 export const getCategories=async()=>{

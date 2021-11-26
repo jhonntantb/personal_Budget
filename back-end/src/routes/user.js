@@ -1,10 +1,10 @@
 const { Router } = require('express');
-const { User }=require('../db')
+const { User,Operation }=require('../db')
 const router = Router();
 
-router.get("/",async(_req,res,next)=>{
+router.get("/:idUser",async(req,res,next)=>{
     try {
-        const user=await User.findAll()
+        const user=await User.findOne({where:{email:req.params.idUser},include:{model:Operation}})
         res.send(user)
     } catch (error) {
         next(error)
